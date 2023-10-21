@@ -16,7 +16,7 @@ const Screen2 = () => {
         onPress={() => navigation.navigate( "Logout", { screen: "Logout"} )}
         style={Styles.NextBottom}
       >
-        <Text style={Styles.BottomText}>로그아웃 화면으로</Text>
+        <Text style={Styles.BottomText}>로그아웃</Text>
       </TouchableOpacity>
   </View>
   )
@@ -34,16 +34,19 @@ const Styles = StyleSheet.create({
     textAlign: "center",
   },
   NextBottom: {
-    backgroundColor: "purple",
+    backgroundColor: "#FEE500",
     padding: 10,
-    marginTop: "20%",
-    width: "50%",
+    marginTop: "80%",
+    width: 200,
+    height: 50,
     alignSelf: "center",
-    borderRadius: 10,
+    borderRadius: 12,
+    justifyContent : "center"
   },
   BottomText: {
-    fontSize: 15,
-    color: 'white',
+    fontSize: 18,
+    fontWeight: "bold",
+    color: 'black',
     textAlign: "center",
   }
 })

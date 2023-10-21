@@ -1,7 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import KakaoLoginImage from './assets/kakao_login_large_narrow.png';
 
 const Splash = () => {
 
@@ -12,9 +11,23 @@ const Splash = () => {
       <Text style={Styles.HomeText}>스플래시 화면</Text>
       <TouchableOpacity
           onPress={() => navigation.navigate("KaKaoLogin", { screen: 'KaKaoLogin' })}
-          style={Styles.NextBottom}
+          
         >
-          <Text style={Styles.BottomText}>로그인 하기</Text>
+          <Image
+          style={{
+            padding: 10,
+            marginTop: "80%",
+            width: 200,
+            height: 50,
+            alignSelf: "center",
+            borderRadius: 12,
+            overflow: 'hidden',
+            borderWidth: 3,
+            borderColor: '#FEE500',
+          }}
+          source={require('./src/kakao_login_large_narrow.png')}
+          />
+         
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.navigate("Home", { screen: 'Home' })}
