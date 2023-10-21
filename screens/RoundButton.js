@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         height: 70,
         marginBottom: 30,
         borderRadius: 35,
-        position: 'absolute',
+        position: 'fixed',
         bottom: 20, // 아래에서 20포인트 떨어진 위치
         right: 20, // 오른쪽에서 20포인트 떨어진 위치
     },
