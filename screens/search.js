@@ -1,16 +1,16 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const Screen1 = () => {
+const Search = () => {
 
   return (
     <View style={Styles.container}>      
-      <Text style={Styles.HomeText}>바코드 찍고 폼 등록하는 페이지</Text>
+      <Text style={Styles.HomeText}>상품검색 페이지 입니다.</Text>
     </View>
   )
 }
 
-export default Screen1;
+export default Search;
 
 const Styles = StyleSheet.create({
   container: {
@@ -18,7 +18,7 @@ const Styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   HomeText: {
-    fontSize: 35,
+    fontSize: 30,
     textAlign: "center",
   },
 })

@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import KakaoLoginImage from './assets/kakao_login_large_narrow.png';
 
 const Splash = () => {
 

@@ -12,7 +12,7 @@ import Home from './screens/home';
 import Screen1 from './screens/screen1';
 import Screen2 from './screens/screen2';
 import Logout from './screens/logout';
-import Add from './screens/add';
+import Search from './screens/search';
 
 
 const Stack = createStackNavigator();
@@ -37,25 +37,25 @@ const BottomTab = createBottomTabNavigator();
 function BottomStack() {
   return (
     <BottomTab.Navigator>
-      <BottomTab.Screen name="상품정보" component={Screen1}
+      <BottomTab.Screen name="상품 검색" component={Search}
+       options={{
+        headerShown: false,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="text-search" color={color} size={30} />
+        ),
+      }} />
+      <BottomTab.Screen name="상품 정보 " component={Screen1}
        options={{
         headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={30} />
         ),
       }} />
-      <BottomTab.Screen name="상품 등록" component={Add}
-       options={{
-        headerShown: false,
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="plus" color={color} size={30} />
-        ),
-      }} />
       <BottomTab.Screen name="로그아웃" component={Screen2}
        options={{
         headerShown: false,
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="brightness-5" color={color} size={30} />
+          <MaterialCommunityIcons name="cog" color={color} size={30} />
         ),
       }} />
     </BottomTab.Navigator>

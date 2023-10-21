@@ -24,7 +24,7 @@ const Signup = () => {
 
   return (
     <View style={Styles.container}>      
-      <Text style={Styles.HomeText}>회원가입 화면</Text>
+      <Text style={Styles.HomeText}>로그인 성공!</Text>
       <TouchableOpacity
           onPress={() => navigation.navigate( "Home", { screen: "Home"} )}
           style={Styles.NextBottom}

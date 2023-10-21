@@ -1,11 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import RoundButton from './RoundButton'; // RoundButton 컴포넌트를 가져옵니다.
 
 const Screen1 = () => {
 
   return (
     <View style={Styles.container}>      
-      <Text style={Styles.HomeText}>상품정보 촤라락</Text>
+      <Text style={Styles.HomeText}>+ 버튼 : 바코드 찍는 창으로 넘어감</Text>
+      <RoundButton/>
     </View>
   )
 }
@@ -18,7 +20,7 @@ const Styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   HomeText: {
-    fontSize: 35,
+    fontSize: 30,
     textAlign: "center",
   },
-})
+});
