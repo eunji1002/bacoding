@@ -1,33 +1,35 @@
 import React, { Component } from 'react';
-import { StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 
 export default class RoundButton extends Component {
     render() {
         return (
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.text}>＋</Text>
-            </TouchableOpacity>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.text}>＋</Text>
+                </TouchableOpacity>
+            </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    buttonContainer: {
+        position: 'absolute',
+        right: 20, // 오른쪽 여백 조정
+        bottom: 20, // 아래쪽 여백 조정
+    },
     button: {
-        backgroundColor: 'green',
+        backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'center',
         width: 70,
         height: 70,
-        marginBottom: 30,
         borderRadius: 35,
-        position: 'fixed',
-        bottom: 20, // 아래에서 20포인트 떨어진 위치
-        right: 20, // 오른쪽에서 20포인트 떨어진 위치
     },
-
     text: {
         fontSize: 50,
         textAlign: 'center',
-        color: 'white'
+        color: 'white',
     }
 });

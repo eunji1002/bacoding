@@ -36,7 +36,7 @@ const Styles = StyleSheet.create({
   NextBottom: {
     backgroundColor: "#FEE500",
     padding: 10,
-    marginTop: "80%",
+    marginTop: "50%",
     width: 200,
     height: 50,
     alignSelf: "center",
