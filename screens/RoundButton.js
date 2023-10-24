@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
 
-export default class RoundButton extends Component {
-    render() {
-        return (
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.text}>＋</Text>
-                </TouchableOpacity>
-            </View>
-        );
-    }
-}
+export default function RoundButton({ onPress }) {
+    return (
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={onPress}>
+          <Text style={styles.text}>+</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 
 const styles = StyleSheet.create({
     buttonContainer: {

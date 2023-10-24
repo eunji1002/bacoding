@@ -13,6 +13,7 @@ import Screen1 from './screens/screen1';
 import Screen2 from './screens/screen2';
 import Logout from './screens/logout';
 import Search from './screens/search';
+import Scan from './screens/Scan';
 
 
 const Stack = createStackNavigator();
@@ -26,6 +27,7 @@ function StackScreen() {
       <Stack.Screen name="Signin" component={Signin} />
       <Stack.Screen name="KaKaoLogin" component={KaKaoLogin} />
       <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="Scanner" component={Scan} />
       <Stack.Screen name="Logout" component={Logout} />
       <Stack.Screen name="Home" component={BottomStack} />
     </Stack.Navigator>
