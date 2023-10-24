@@ -36,8 +36,8 @@ const KaKaoLogin = () => {
       },
     }).then((response) => {
       AccessToken = response.data.access_token;
-      //console.log(AccessToken);
-      //requestUserInfo(AccessToken);
+      console.log(AccessToken);
+      requestUserInfo(AccessToken);
       storeData(AccessToken);
     }).catch(function (error) {
       console.log('error', error);

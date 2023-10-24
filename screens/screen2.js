@@ -1,26 +1,53 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity} from "react-native";
+import React, { useRef, useState } from "react";
+import { View, Text, StyleSheet, Button } from "react-native";
 import { WebView } from 'react-native-webview';
 import { useNavigation } from "@react-navigation/native";
 
-
-
 const Screen2 = () => {
+    const navigation = useNavigation();
+    const webViewRef = useRef(null);
+    const [webViewVisible, setWebViewVisible] = useState(false);
 
-  const navigation = useNavigation();
+    const handleLogout = () => {
+        // Your logout URL logic here
+        const logoutURL = 'https://kauth.kakao.com/oauth/logout?client_id=e6ff0c1fbb38cce593111186d1af9e72&logout_redirect_uri=http://192.168.35.3:19006/Splash';
 
-  return (
-    <View style={Styles.container}>      
-    <Text style={Styles.HomeText}>로그아웃 화면</Text>
-    <TouchableOpacity
-        onPress={() => navigation.navigate( "Logout", { screen: "Logout"} )}
-        style={Styles.NextBottom}
-      >
-        <Text style={Styles.BottomText}>로그아웃</Text>
-      </TouchableOpacity>
-  </View>
-  )
+        const onNavigationStateChange = (navState) => {
+            // Check if the WebView has navigated to the logout redirect URI
+            if (navState.url === 'http://192.168.35.3:19006/Splash') {
+                // You can optionally add a delay here if necessary.
+                // Simulate a delay and then navigate to the splash screen.
+                setTimeout(() => {
+                    setWebViewVisible(false);
+                    navigation.navigate("Splash"); // Replace "Splash" with your actual screen name
+                }, 1000); // 1000 milliseconds (1 second) delay
+            }
+        };
+
+        return (
+            <View style={Styles.container}>
+                <Button title="로그아웃" onPress={() => setWebViewVisible(true)} />
+                {webViewVisible && (
+                    <WebView
+                        ref={webViewRef}
+                        source={{ uri: logoutURL }}
+                        style={{ marginTop: 10 }}
+                        onNavigationStateChange={onNavigationStateChange}
+                    />
+                )}
+            </View>
+        );
+    }
+
+    return (
+        <View style={Styles.container}>
+            {handleLogout()}
+        </View>
+    )
 }
+
+
+
 
 export default Screen2;
 
