@@ -4,7 +4,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Splash from './screens/splash';
-import Signin from './screens/signin';
 import Signup from './screens/signup';
 import KaKaoLogin from './screens/kakaoLogin';
 import Home from './screens/home';
@@ -14,6 +13,8 @@ import Screen2 from './screens/screen2';
 
 import Search from './screens/search';
 import Scan from './screens/Scan';
+import Login from './screens/login';
+import Newaccount from './screens/newaccount';
 
 
 const Stack = createStackNavigator();
@@ -24,7 +25,8 @@ function StackScreen() {
       initialRouteName="Splash"
     >
       <Stack.Screen name="Splash" component={Splash} />
-      <Stack.Screen name="Signin" component={Signin} />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Newaccount" component={Newaccount} />
       <Stack.Screen name="KaKaoLogin" component={KaKaoLogin} />
       <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Scanner" component={Scan} />

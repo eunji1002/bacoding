@@ -20,7 +20,7 @@ const Screen2 = () => {
                 setTimeout(() => {
                     setWebViewVisible(false);
                     navigation.navigate("Splash"); // Replace "Splash" with your actual screen name
-                }, 1000); // 1000 milliseconds (1 second) delay
+                }, 0); // 1000 milliseconds (1 second) delay
             }
         };
 

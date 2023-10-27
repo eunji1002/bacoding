@@ -18,10 +18,22 @@ const Splash = () => {
         />
       </TouchableOpacity>
       <TouchableOpacity
+        onPress={() => navigation.navigate("Login", { screen: 'Login' })}
+        style={Styles.NextBottom}
+      >
+        <Text style={Styles.BottomText}>로그인</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.navigate("Newaccount", { screen: 'Newaccount' })}
+        style={Styles.NextBottom}
+      >
+        <Text style={Styles.BottomText}>회원가입</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
         onPress={() => navigation.navigate("Home", { screen: 'Home' })}
         style={Styles.NextBottom}
       >
-        <Text style={Styles.BottomText}>홈 화면으로(없앨거임)</Text>
+        <Text style={Styles.BottomText}>홈으로</Text>
       </TouchableOpacity>
     </View>
   );
