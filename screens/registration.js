@@ -1,6 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import {Alert} from "react-native";
 
 export async function registration(nickName, email, password) {
     
@@ -15,8 +16,11 @@ export async function registration(nickName, email, password) {
             email : currentUser.email,
             nickName : nickName
         });
+        Alert.alert("회원가입 성공!");
+        return true; 
         
     }catch (err) {
         console.log(err.message);
+        Alert.alert("회원가입 오류 : ", err.message);
     }
 }

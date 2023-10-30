@@ -3,15 +3,19 @@ import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import {signin} from './signin';
 import { useNavigation } from "@react-navigation/native";
 
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
+ 
 
-  const handleLogin = () => {
-  signin(email,password);
-  navigation.navigate("Home", { screen: "Home" } );
-}
+  const handleLogin = async () => {
+    const success = await signin(email, password);
+    if (success) {
+      navigation.navigate("Home")}
+    }
+  
 
 return (
     <View style={styles.container}>
@@ -32,6 +36,7 @@ return (
      <Button title="로그인" onPress={handleLogin} />
     </View>
   );
+
 }
 
 const styles = StyleSheet.create({

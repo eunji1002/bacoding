@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { registration } from './registration';
-import { useNavigation } from "@react-navigation/native";
+
 const Newaccount = () => {
   const [nickName, setNickName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigation = useNavigation();
+
   
-  const handleSignup = () => {
-    registration(nickName, email, password);
-    navigation.navigate("Splash", { screen: "Splash" } );
+  const handleSignup = async () => {
+    const success = await registration(nickName ,email, password);
+    if (success) {
+      navigation.navigate("Splash")}
+    
   }
 
   return (
