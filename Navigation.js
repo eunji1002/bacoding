@@ -15,6 +15,7 @@ import Search from './screens/search';
 import Scan from './screens/Scan';
 import Login from './screens/login';
 import Newaccount from './screens/newaccount';
+import Push from './screens/push';
 
 
 const Stack = createStackNavigator();
@@ -52,6 +53,13 @@ function BottomStack() {
         headerShown: false,
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={30} />
+        ),
+      }} />
+      <BottomTab.Screen name="푸시 알림" component={Push}
+       options={{
+        headerShown: false,
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="alarm" color={color} size={30} />
         ),
       }} />
       <BottomTab.Screen name="로그아웃" component={Screen2}

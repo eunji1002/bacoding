@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e810d23b-aa36-4b36-bca7-56db47ba3391"
+      }
+    },
+    "owner": "bellozzang"
   }
 }
